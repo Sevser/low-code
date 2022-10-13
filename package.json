@@ -1,0 +1,15 @@
+{
+  "name": "low-code",
+  "version": "1.0.0",
+  "description": "project for code generation from figma sketches to vuejs",
+  "main": "index.js",
+  "repository": "https://github.com/Sevser/low-code",
+  "author": "Sevser",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.0.0"
+  }
+}

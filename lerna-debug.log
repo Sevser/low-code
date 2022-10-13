@@ -1,0 +1,14 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '6.0.0',
+0 silly argv   '$0': 'C:\\Users\\arufa\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
+0 silly argv   name: 'plugin'
+0 silly argv }
+1 notice cli v6.0.0
+2 verbose rootPath C:\programming\low-code
+3 error Error: Command failed with exit code 1: git config --get user.name
+3 error     at makeError (C:\Users\arufa\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\lib\error.js:60:11)
+3 error     at Function.module.exports.sync (C:\Users\arufa\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:194:17)
+3 error     at Object.execSync (C:\Users\arufa\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\child-process\index.js:39:16)
+3 error     at CreateCommand.gitConfig (C:\Users\arufa\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\create\index.js:180:25)
+3 error     at CreateCommand.initialize (C:\Users\arufa\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\create\index.js:102:46)
