@@ -1,7 +1,7 @@
 {
   "name": "plugin",
   "version": "1.0.0",
-  "description": "ui plugin for figma for export code",
+  "description": "plugin for figma for export code",
   "keywords": [
     "figma",
     "plugin"
@@ -26,5 +26,8 @@
   },
   "bugs": {
     "url": "https://github.com/Sevser/low-code/issues"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.53.0"
   }
 }

@@ -1,0 +1,7 @@
+{
+    "name": "plugin",
+    "api": "1.0.0",
+    "main": "./lib/plugin.js",
+    "ui": "./ui/index.html",
+    "editorType": ["figma"]
+}
