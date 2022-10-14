@@ -22,10 +22,15 @@
     "url": "git+https://github.com/Sevser/low-code.git"
   },
   "scripts": {
-    "test": "node ./__tests__/plugin.test.js"
+    "watch": "tsc --watch -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "lint": "tslint \"lib/**/*.ts\""
   },
   "bugs": {
     "url": "https://github.com/Sevser/low-code/issues"
+  },
+  "dependencies": {
+    "typescript": "4.8.4"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.53.0"
