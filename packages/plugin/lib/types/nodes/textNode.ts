@@ -1,24 +1,26 @@
-import { createNode } from "../../createNode";
 import { INode, NodeHandlerType } from "../../Itypes/INode";
 import { createStyles } from "../../styles/createStyles";
 import { Property } from "../Property";
 import { Style } from "../Style";
 
-export class FrameNodeModel implements INode {
+export class TextNodeModel implements INode {
     public id: string;
-    public type: NodeHandlerType;
     public name: string;
+    public type: NodeHandlerType;
     public properties: Property[];
     public styles: Style[];
-    public children: INode[];
     constructor(node: FrameNode) {
         this.id = node.id;
         this.name = node.name;
-        this.type = "Frame";
-        this.children = node.children.map(createNode).filter(n => n);
-        this.styles = createStyles(node);
+        this.type = "Text";
+        this.styles = createStyles(node).map(style => {
+            if (style.name === 'background-color') {
+                style.name = 'color';
+            }
+            return style;
+        });
     }
     static checkForNode(node) {
-        return node.type === 'FRAME';
+        return node.type === 'TEXT';
     }
 }

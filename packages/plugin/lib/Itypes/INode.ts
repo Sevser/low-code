@@ -1,6 +1,7 @@
 import { IStyle } from "./IStyle";
 
 export type PropertyType = "variant" | "custom";
+export type NodeHandlerType = "Frame" | "Text";
 
 export interface IProperty {
     label: string,
@@ -11,7 +12,8 @@ export interface IProperty {
 export interface INode {
     id: string;
     name: string;
+    type: NodeHandlerType;
     properties: IProperty[],
     styles: IStyle[],
-    children: INode[],
+    children?: INode[],
 };

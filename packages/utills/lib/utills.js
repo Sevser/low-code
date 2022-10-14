@@ -7,5 +7,8 @@ module.exports = {
         } else {
             return value;
         }
+    },
+    createRGB({ r, g, b }) {
+        return `${Math.floor(r * 255)}, ${Math.floor(g * 255)}, ${Math.floor(b * 255)}`;
     }
 }

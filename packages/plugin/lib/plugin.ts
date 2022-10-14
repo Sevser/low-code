@@ -14,6 +14,6 @@ figma.showUI(
     {
         width: 400,
         height: 600,
-        title: "My title"
+        title: "LowCode"
     }
 );
