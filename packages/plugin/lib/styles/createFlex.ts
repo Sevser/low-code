@@ -1,5 +1,19 @@
 import { Style } from "../types/Style";
 
+const primaryAxisMapping = {
+    MIN: 'flex-start',
+    MAX: 'flex-end',
+    CENTER: 'center',
+    SPACE_BETWEEN: 'space-between'
+};
+
+const counterAxisMapping = {
+    MIN: 'flex-start',
+    MAX: 'flex-end',
+    CENTER: 'center',
+    BASELINE: 'baseline'
+}
+
 export function createFlex(node): Style[] | null {
     if (node.layoutMode === 'NONE') {
         return null;
@@ -52,5 +66,13 @@ export function createFlex(node): Style[] | null {
             value: `${node.paddingBottom}px`,
         }));
     }
+    ret.push(new Style({
+        name: 'justify-content',
+        value: primaryAxisMapping[node.primaryAxisAlignItems],
+    }));
+    ret.push(new Style({
+        name: 'align-items',
+        value: counterAxisMapping[node.counterAxisAlignItems],
+    }));
     return ret;
 }

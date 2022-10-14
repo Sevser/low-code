@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-  helloworld123
+  helloworld123a
   </div>
 </template>
 
@@ -8,13 +8,6 @@
 
 export default {
   name: 'App',
-  components: {
-  },
-  mounted() {
-    console.log('i am mounted');
-    console.log(this.$el);
-    console.log(document);
-  }
 }
 </script>
 

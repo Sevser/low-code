@@ -6,7 +6,6 @@ figma.on("selectionchange", () => {
         return;
     }
     const selection = selections[0]; 
-    console.log(createNode(selection));
 })
 
 figma.showUI(
