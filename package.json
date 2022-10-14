@@ -4,7 +4,7 @@
   "description": "project for code generation from figma sketches to vuejs",
   "main": "index.js",
   "repository": "https://github.com/Sevser/low-code",
-  "author": "Sevser",
+  "author": "sevser <sevser39@gmail.com>",
   "license": "MIT",
   "workspaces": [
     "packages/*"

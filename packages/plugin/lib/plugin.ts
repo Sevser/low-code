@@ -5,7 +5,8 @@ figma.on("selectionchange", () => {
     if (!selections.length) {
         return;
     }
-    const selection = selections[0]; 
+    const selection = selections[0];
+    console.log(createNode(selection));
 })
 
 figma.showUI(
