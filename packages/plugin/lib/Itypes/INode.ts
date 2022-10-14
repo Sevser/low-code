@@ -1,6 +1,6 @@
 import { IStyle } from "./IStyle";
 
-export type PropertyType = "variant" | "json";
+export type PropertyType = "variant" | "custom";
 
 export interface IProperty {
     label: string,

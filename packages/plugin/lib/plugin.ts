@@ -1,10 +1,12 @@
+import { createNode } from "./createNode";
+
 figma.on("selectionchange", () => {
     const selections = figma.currentPage.selection;
     if (!selections.length) {
         return;
     }
     const selection = selections[0]; 
-    console.log(selection);
+    console.log(createNode(selection));
 })
 
 figma.showUI(
