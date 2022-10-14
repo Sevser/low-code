@@ -8,6 +8,7 @@
   "compilerOptions": {
     "target": "es6",
     "skipLibCheck": true,
+    "moduleResolution": "node",
     "lib": [
       "es6"
     ],

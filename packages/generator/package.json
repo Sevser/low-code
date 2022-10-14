@@ -1,5 +1,5 @@
 {
-  "name": "generator",
+  "name": "@lowCode/generator",
   "version": "1.0.0",
   "description": "generator for converting sketches for code",
   "keywords": [

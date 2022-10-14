@@ -1,15 +1,11 @@
 {
-  "name": "@lowCode/backend",
+  "name": "@lowCode/utills",
   "version": "1.0.0",
-  "description": "backend service for generation",
-  "keywords": [
-    "express",
-    "js"
-  ],
+  "description": "utills for low code",
   "author": "sevser <sevser39@gmail.com>",
   "homepage": "https://github.com/Sevser/low-code#readme",
   "license": "ISC",
-  "main": "lib/backend.js",
+  "main": "lib/utills.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -22,7 +18,7 @@
     "url": "git+https://github.com/Sevser/low-code.git"
   },
   "scripts": {
-    "test": "node ./__tests__/backend.test.js"
+    "test": "node ./__tests__/utills.test.js"
   },
   "bugs": {
     "url": "https://github.com/Sevser/low-code/issues"
