@@ -15,12 +15,7 @@ export default {
                 {
                     "name": "display",
                     "value": "flex"
-                },
-                {
-                    "name": "justify-content"
-                },
-                {
-                    "name": "align-items"
+                    
                 }
             ]
         }

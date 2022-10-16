@@ -66,13 +66,17 @@ export function createFlex(node): Style[] | null {
             value: `${node.paddingBottom}px`,
         }));
     }
-    ret.push(new Style({
-        name: 'justify-content',
-        value: primaryAxisMapping[node.primaryAxisAlignItems],
-    }));
-    ret.push(new Style({
-        name: 'align-items',
-        value: counterAxisMapping[node.counterAxisAlignItems],
-    }));
+    if (node.primaryAxisAlignItems) {
+        ret.push(new Style({
+            name: 'justify-content',
+            value: primaryAxisMapping[node.primaryAxisAlignItems],
+        }));
+    }
+    if (node.counterAxisAlignItems) {
+        ret.push(new Style({
+            name: 'align-items',
+            value: counterAxisMapping[node.counterAxisAlignItems],
+        }));
+    }
     return ret;
 }
