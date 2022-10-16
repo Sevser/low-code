@@ -1,5 +1,5 @@
 const generateScript = () => {
-    return ``;
+    return `<script></script>`;
 };
 
 export default generateScript;

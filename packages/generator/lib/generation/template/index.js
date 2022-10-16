@@ -1,5 +1,5 @@
 const generateTemplate = (frame) => {
-    return ``;
+    return `<template></template>`;
 }
 
 export default generateTemplate;
