@@ -1,3 +1,4 @@
 node_modules/
 packages/plugin/**/*.js
 packages/plugin/build/**
+packages/generator/data/dist/**/*
