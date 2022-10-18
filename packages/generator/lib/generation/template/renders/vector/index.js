@@ -1,6 +1,6 @@
 import calcClassName from "../../../../utills/calcClassName.js";
 
-const renderText = (node) => {
+const renderVector = (node) => {
     const content = node.properties && node.properties.find(item => item.label === 'content' && item.type === 'custom') || '';
     return {
         tag: 'div',
@@ -15,4 +15,4 @@ const renderText = (node) => {
     }
 };
 
-export default renderText;
+export default renderVector;
