@@ -3,37 +3,35 @@ import { createStyles } from "../../styles/createStyles";
 import { Property } from "../Property";
 import { Style } from "../Style";
 
-export class TextNodeModel implements INode {
+export class VectorNodeModel implements INode {
     public id: string;
     public name: string;
     public type: NodeHandlerType;
     public properties: Property[];
     public styles: Style[];
-    constructor(node: TextNode) {
+    constructor(node: VectorNode) {
         this.id = node.id;
         this.name = node.name;
-        this.type = "Text";
-        this.styles = createStyles(node).map(style => {
-            if (style.name === 'background-color') {
-                style.name = 'color';
-            }
-            return style;
+        this.type = "Vector";
+        this.styles = createStyles(node);
+    }
+    
+    static async createNode(node: VectorNode) {
+        const ret = new VectorNodeModel(node);
+        const uint8ArraySvg = await node.exportAsync({
+            format: 'SVG',
         });
-        this.properties = [
+        ret.properties = [
             new Property({
                 label: 'content',
                 type: 'custom',
-                value: node.characters,
+                value: String.fromCharCode.apply(null, uint8ArraySvg),
             }),
         ];
-    }
-    
-    static async createNode(node: TextNode) {
-        const ret = new TextNodeModel(node);
         return ret;
     }
 
     static checkForNode(node) {
-        return node.type === 'TEXT';
+        return node.type === 'GROUP' && node.name === "Vector";
     }
 }

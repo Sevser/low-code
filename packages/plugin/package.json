@@ -23,7 +23,7 @@
   },
   "scripts": {
     "watch": "npx webpack",
-    "watch-tsx": "tsc --module commonjs --watch -p tsconfig.json",
+    "watch-tsc": "tsc --module commonjs --watch -p tsconfig.json",
     "build": "tsc -p tsconfig.json",
     "lint": "tslint \"lib/**/*.ts\""
   },

@@ -1,12 +1,12 @@
 import { createNode } from "./createNode";
 
-figma.on("selectionchange", () => {
+figma.on("selectionchange", async () => {
     const selections = figma.currentPage.selection;
     if (!selections.length) {
         return;
     }
     const selection = selections[0];
-    console.log(createNode(selection));
+    console.log(await createNode(selection));
 })
 
 figma.showUI(

@@ -15,9 +15,15 @@ export class FrameNodeModel implements INode {
         this.id = node.id;
         this.name = node.name;
         this.type = "Frame";
-        this.children = node.children.map(createNode).filter(n => n);
         this.styles = createStyles(node);
     }
+    
+    static async createNode(node: FrameNode) {
+        const ret = new FrameNodeModel(node);
+        ret.children = (await Promise.all(node.children.map(createNode))).filter(n => n);
+        return ret;
+    }
+
     static checkForNode(node) {
         return node.type === 'FRAME';
     }
