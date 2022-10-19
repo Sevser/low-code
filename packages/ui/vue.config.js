@@ -1,4 +1,3 @@
-const { defineConfig } = require('@vue/cli-service')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');

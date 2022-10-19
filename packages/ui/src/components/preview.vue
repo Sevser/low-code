@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     iframeUrl() {
-      return `http://localhost:4500/viewModel?guid=${this.guid}`;
+      return `${process.env.VUE_APP_HOST}/viewModel?guid=${this.guid}`;
     },
     selectedElement() {
       return this.getSelectedElement();
@@ -36,7 +36,7 @@ export default {
       if (!this.selectedElement) {
         return;
       }
-      const data = await axios.post("http://localhost:4500/create", {
+      const data = await axios.post(`${process.env.VUE_APP_HOST}/create`, {
         data: {
           model: this.selectedElement,
         },

@@ -2,7 +2,7 @@
   "name": "@lowCode/ui-plugin",
   "version": "1.0.0",
   "scripts": {
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -11,7 +11,9 @@
     "bootstrap": "5.2.2",
     "bootstrap-vue": "2.22.0",
     "axios": "1.1.3",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "dotenv-webpack": "8.0.1",
+    "dotenv": "16.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

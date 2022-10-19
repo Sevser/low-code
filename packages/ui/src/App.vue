@@ -40,6 +40,7 @@ export default {
     };
   },
   mounted() {
+    console.log(process.env);
     this.subscribeForMessages();
   },
 };

@@ -30,6 +30,9 @@
   "bugs": {
     "url": "https://github.com/Sevser/low-code/issues"
   },
+  "dependencies": {
+    "dotenv": "16.0.3"
+  },
   "devDependencies": {
     "@figma/plugin-typings": "^1.53.0",
     "@lowCode/utills": "1.0.0",
