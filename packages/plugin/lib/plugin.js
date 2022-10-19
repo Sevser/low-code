@@ -10,16 +10,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const createNode_1 = require("./createNode");
-figma.on("selectionchange", () => __awaiter(void 0, void 0, void 0, function* () {
+const PostMessage_1 = require("./messages/PostMessage");
+const selectionChange = () => __awaiter(void 0, void 0, void 0, function* () {
     const selections = figma.currentPage.selection;
-    if (!selections.length) {
-        return;
+    let message = new PostMessage_1.PostMessage({
+        type: 'selectionChange',
+        payload: null,
+    });
+    if (selections.length !== 0) {
+        const selection = selections[0];
+        try {
+            message.payload = yield (0, createNode_1.createNode)(selection);
+        }
+        catch (_a) { }
     }
-    const selection = selections[0];
-    console.log(yield (0, createNode_1.createNode)(selection));
-}));
+    figma.ui.postMessage(message);
+});
+figma.on("selectionchange", selectionChange);
 figma.showUI(__html__, {
     width: 400,
     height: 600,
     title: "LowCode"
 });
+selectionChange();

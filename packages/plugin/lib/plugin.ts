@@ -1,13 +1,24 @@
 import { createNode } from "./createNode";
+import { PostMessage } from "./messages/PostMessage";
 
-figma.on("selectionchange", async () => {
+const selectionChange = async () => {
     const selections = figma.currentPage.selection;
-    if (!selections.length) {
-        return;
+    let message = new PostMessage({
+        type: 'selectionChange',
+        payload: null,
+    });
+    if (selections.length !== 0) {
+        const selection = selections[0];
+        try {
+            message.payload = await createNode(selection);
+        } catch {}
     }
-    const selection = selections[0];
-    console.log(await createNode(selection));
-})
+    figma.ui.postMessage(message);
+};
+
+figma.on("selectionchange", selectionChange);
+
+
 
 figma.showUI(
     __html__,
@@ -17,3 +28,4 @@ figma.showUI(
         title: "LowCode"
     }
 );
+selectionChange();
