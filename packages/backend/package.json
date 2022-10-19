@@ -19,13 +19,18 @@
     "lib"
   ],
   "dependencies": {
-    "express": "^4.16.0"
+    "express": "^4.16.0",
+    "cors": "2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sevser/low-code.git"
   },
   "scripts": {
+    "dev": "nodemon './lib/backend.js",
     "test": "node ./__tests__/backend.test.js"
   },
   "bugs": {

@@ -1,7 +1,8 @@
 import express from 'express';
-import path from 'path';
+import cors from 'cors';
 
 export default (app) => {
     app.use(express.json()); 
-    app.use('/static', express.static(path.join(__dirname, 'lib/public')));
+    app.use(cors());
+    app.use('/static', express.static('lib/public'));
 };
