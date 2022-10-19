@@ -6,6 +6,7 @@
     "express",
     "js"
   ],
+  "type": "module",
   "author": "sevser <sevser39@gmail.com>",
   "homepage": "https://github.com/Sevser/low-code#readme",
   "license": "ISC",
@@ -17,6 +18,9 @@
   "files": [
     "lib"
   ],
+  "dependencies": {
+    "express": "^4.16.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sevser/low-code.git"

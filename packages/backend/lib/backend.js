@@ -1,7 +1,10 @@
-'use strict';
+import express from 'express';
+import generateEndpoints from './endpoints/generate.js';
+import middleware from './middleware/index.js';
 
-module.exports = backend;
+const app = express();
 
-function backend() {
-    return "Hello from backend";
-}
+middleware(app);
+generateEndpoints(app);
+
+app.listen(4500);
