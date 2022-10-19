@@ -1,4 +1,6 @@
 import utills from "@lowCode/utills";
+import generator from "@lowCode/generator";
+import fs from 'fs/promises';
 
 const savedModels = {};
 
@@ -13,13 +15,11 @@ export default (app) => {
         })
     });
 
-    app.get('/viewModel', (req, res) => {
+    app.get('/viewModel', async (req, res) => {
         const guid = req.query.guid;
-        res.send({
-            data: {
-                guid: guid,
-                model:  savedModels[guid],
-            },
-        })
+        let html = await fs.readFile('lib/public/index.html');
+        html = String.fromCharCode.apply(null, html);
+        html = html.replace('${component}', generator.generateSFA(savedModels[guid]));
+        res.send(html);
     });
 };
