@@ -1,14 +1,19 @@
 <template>
   <div class="app">
-    <hello-world></hello-world>
+    <b-tabs content-class="mt-3">
+      <b-tab title="Settings" active><settings></settings></b-tab>
+      <b-tab title="Preview"><Preview></Preview></b-tab>
+    </b-tabs>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Settings from "./components/settings.vue";
+import Preview from "./components/preview.vue";
 export default {
   components: {
-    HelloWorld
+    Settings,
+    Preview,
   },
   provide() {
     return {
@@ -38,4 +43,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
