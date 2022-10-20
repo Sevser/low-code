@@ -4,8 +4,4 @@
 
 ## Usage
 
-```
-const generator = require('generator');
-
-// TODO: DEMONSTRATE API
-```
+`yarn dev` to test generation vue files, generated files located in ./data/dist

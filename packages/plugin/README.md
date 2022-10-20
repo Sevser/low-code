@@ -4,8 +4,9 @@
 
 ## Usage
 
-```
-const plugin = require('plugin');
+for developing run 2 scripts at the same time:
+`yarn watch`
+`yarn watch-tsc`
 
-// TODO: DEMONSTRATE API
-```
+
+for connect to figma use manifest json

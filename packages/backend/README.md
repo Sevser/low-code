@@ -4,8 +4,4 @@
 
 ## Usage
 
-```
-const backend = require('backend');
-
-// TODO: DEMONSTRATE API
-```
+`yarn dev` to start server 
