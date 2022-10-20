@@ -1,19 +1,16 @@
 <template>
   <div class="app">
     <b-tabs content-class="mt-3" v-model="tabValue">
-      <b-tab title="Settings" active><settings v-if="tabValue === 0"></settings></b-tab>
-      <b-tab title="Preview"><Preview v-if="tabValue === 1"></Preview></b-tab>
+      <b-tab title="Preview"><Preview v-if="tabValue === 0"></Preview></b-tab>
     </b-tabs>
   </div>
 </template>
 
 <script>
-import Settings from "./components/settings.vue";
 import Preview from "./components/preview.vue";
 
 export default {
   components: {
-    Settings,
     Preview,
   },
   provide() {
