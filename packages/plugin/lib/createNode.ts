@@ -1,6 +1,7 @@
 import { INode } from "./Itypes/INode";
 import { FrameNodeModel } from "./types/nodes/frameNode";
 import { ImageNodeModel } from "./types/nodes/imageNode";
+import { InstanceNodeModel } from "./types/nodes/instanceNode";
 import { TextNodeModel } from "./types/nodes/textNode";
 import { VectorNodeModel } from "./types/nodes/vectorNode";
 
@@ -16,6 +17,9 @@ export async function createNode(node): Promise<INode | null> {
     }
     if (ImageNodeModel.checkForNode(node)) {
         return await ImageNodeModel.createNode(node);
+    }
+    if (InstanceNodeModel.checkForNode(node)) {
+        return await InstanceNodeModel.createNode(node);
     }
     return null;
 };

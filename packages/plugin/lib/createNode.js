@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createNode = void 0;
 const frameNode_1 = require("./types/nodes/frameNode");
 const imageNode_1 = require("./types/nodes/imageNode");
+const instanceNode_1 = require("./types/nodes/instanceNode");
 const textNode_1 = require("./types/nodes/textNode");
 const vectorNode_1 = require("./types/nodes/vectorNode");
 function createNode(node) {
@@ -27,6 +28,9 @@ function createNode(node) {
         }
         if (imageNode_1.ImageNodeModel.checkForNode(node)) {
             return yield imageNode_1.ImageNodeModel.createNode(node);
+        }
+        if (instanceNode_1.InstanceNodeModel.checkForNode(node)) {
+            return yield instanceNode_1.InstanceNodeModel.createNode(node);
         }
         return null;
     });

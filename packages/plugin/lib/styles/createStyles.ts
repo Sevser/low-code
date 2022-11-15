@@ -2,6 +2,7 @@ import { IStyle } from "../Itypes/IStyle";
 import { createBackground } from "./createBackground";
 import { createBorderRadius } from "./createBorderRadius";
 import { createFlex } from "./createFlex";
+import { createFonts } from "./createFonts";
 
 
 export function createStyles(node): IStyle[] {
@@ -17,6 +18,10 @@ export function createStyles(node): IStyle[] {
     const fl = createFlex(node);
     if (fl) {
         ret.push(...fl);
+    }
+    const fonts = createFonts(node);
+    if (fonts) {
+        ret.push(...fonts);
     }
     return ret;
 }
