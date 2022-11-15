@@ -78,5 +78,17 @@ export function createFlex(node): Style[] | null {
             value: counterAxisMapping[node.counterAxisAlignItems],
         }));
     }
+    if (node.layoutGrow) {
+        ret.push(new Style({
+            name: 'justify-self',
+            value: 'normal',
+        }));
+    }
+    if (node.primaryAxisSizingMode === 'AUTO') {
+        ret.push(new Style({
+            name: 'align-self',
+            value: 'normal',
+        }));
+    }
     return ret;
 }

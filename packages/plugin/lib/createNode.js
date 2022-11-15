@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createNode = void 0;
 const frameNode_1 = require("./types/nodes/frameNode");
+const groupNode_1 = require("./types/nodes/groupNode");
 const imageNode_1 = require("./types/nodes/imageNode");
 const instanceNode_1 = require("./types/nodes/instanceNode");
 const textNode_1 = require("./types/nodes/textNode");
@@ -31,6 +32,9 @@ function createNode(node) {
         }
         if (instanceNode_1.InstanceNodeModel.checkForNode(node)) {
             return yield instanceNode_1.InstanceNodeModel.createNode(node);
+        }
+        if (groupNode_1.GroupNodeModel.checkForNode(node)) {
+            return yield groupNode_1.GroupNodeModel.createNode(node);
         }
         return null;
     });
