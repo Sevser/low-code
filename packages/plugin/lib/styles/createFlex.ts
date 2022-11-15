@@ -84,7 +84,7 @@ export function createFlex(node): Style[] | null {
             value: 'normal',
         }));
     }
-    if (node.primaryAxisSizingMode === 'AUTO') {
+    if (node.layoutAlign === 'STRETCH') {
         ret.push(new Style({
             name: 'align-self',
             value: 'normal',
