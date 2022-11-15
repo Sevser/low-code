@@ -24,6 +24,7 @@ const selectionChange = () => __awaiter(void 0, void 0, void 0, function* () {
         }
         catch (_a) { }
     }
+    console.log('selected node:', message.payload);
     figma.ui.postMessage(message);
 });
 figma.on("selectionchange", selectionChange);

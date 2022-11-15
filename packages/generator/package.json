@@ -28,5 +28,8 @@
   },
   "bugs": {
     "url": "https://github.com/Sevser/low-code/issues"
+  },
+  "dependencies": {
+    "@lowCode/utills": "1.0.0"
   }
 }

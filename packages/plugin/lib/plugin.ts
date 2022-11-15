@@ -13,6 +13,7 @@ const selectionChange = async () => {
             message.payload = await createNode(selection);
         } catch {}
     }
+    console.log('selected node:', message.payload);
     figma.ui.postMessage(message);
 };
 

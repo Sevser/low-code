@@ -16,6 +16,7 @@
     "dev:backend": "cd ./packages/backend && yarn dev",
     "dev:ui": "cd ./packages/ui && yarn build",
     "dev:plugin": "cd ./packages/plugin && yarn watch",
-    "dev:plugin-tsc": "cd ./packages/plugin && yarn watch-tsc"
+    "dev:plugin-tsc": "cd ./packages/plugin && yarn watch-tsc",
+    "dev:generator": "cd ./packages/generator && node ./data/generate.js"
   }
 }

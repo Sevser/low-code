@@ -1,5 +1,10 @@
-module.exports = {
+const base64 = require('./base64');
+
+module.exports = Object.assign({
     clone(value) {
+        if (value && value.constructor && value.constructor === Uint8Array) {
+            return value;
+        }
         if (typeof value === 'object') {
             if (value) {
                 return JSON.parse(JSON.stringify(val.value));
@@ -17,5 +22,5 @@ module.exports = {
     },
     createGUID() {
         return `${this.createQuadriplet()}${this.createQuadriplet()}-${this.createQuadriplet()}-${this.createQuadriplet()}-${this.createQuadriplet()}-${this.createQuadriplet()}${this.createQuadriplet()}${this.createQuadriplet()}`;
-    }
-}
+    },
+}, base64);
