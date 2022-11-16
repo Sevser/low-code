@@ -15,5 +15,11 @@ export function createFonts(node): Style[] | null {
             value: ''+tnode.fontWeight,
         }))
     }
+    if (tnode.fontName !== undefined && tnode.fontName !== figma.mixed) {
+        ret.push(new Style({
+            name: 'font-family',
+            value: tnode.fontName.family,
+        }))
+    }
     return ret.length ? ret : null;
 }
