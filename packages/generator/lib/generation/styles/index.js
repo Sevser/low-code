@@ -12,7 +12,7 @@ const generateClassContent = (node) => node.styles.map(style => `${style.name}: 
 const generateClasses = (nodeList) => nodeList.map(node => `.${calcClassName(node)}{${generateClassContent(node)}}`).join('');
 
 const createImportFonts = (nodeList) => {
-    return nodeList.reduce((acc, node) => {
+    return [...nodeList.reduce((acc, node) => {
         const fonts = node.styles.filter(style => style.name === 'font-family');
         if (fonts.length) {
             acc.push(...fonts.map(font => {
@@ -20,7 +20,10 @@ const createImportFonts = (nodeList) => {
             }));
         }
         return acc;
-    }, []).join(' ');
+    }, []).reduce((acc, item) => {
+        acc.add(item);
+        return acc;
+    }, new Set()).keys()].join(' ');
 }
 
 const generateStyles = (frame) => {

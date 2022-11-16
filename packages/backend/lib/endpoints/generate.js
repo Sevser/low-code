@@ -18,6 +18,14 @@ export default (app) => {
         })
     });
 
+    app.post('/downloadSFC', async (req, res) => {
+        const model = req.body.data.model;
+        const sfa = generator.generateSFA(model);
+        res.setHeader('Content-Length', sfa.length);
+        res.write(sfa, 'binary');
+        res.end();
+    });
+
     app.get('/viewModel', async (req, res) => {
         const guid = req.query.guid;
         let model = savedModels[guid];
