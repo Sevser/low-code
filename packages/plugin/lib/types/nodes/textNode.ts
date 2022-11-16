@@ -26,6 +26,13 @@ export class TextNodeModel implements INode {
                 value: node.characters,
             }),
         ];
+        if (node.hyperlink && (node.hyperlink as HyperlinkTarget).type === 'URL') {
+            this.properties.push(new Property({
+                label: 'link',
+                type: 'custom',
+                value: (node.hyperlink as HyperlinkTarget).value,
+            }));
+        }
     }
     
     static async createNode(node: TextNode) {

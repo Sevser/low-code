@@ -1,7 +1,7 @@
 import { IStyle } from "./IStyle";
 
 export type PropertyType = "variant" | "custom";
-export type NodeHandlerType = "Frame" | "Text" | "Vector";
+export type NodeHandlerType = "Frame" | "Text" | "Vector" | "Image" | "Instance" | "Group";
 
 export interface IProperty {
     label: string,
