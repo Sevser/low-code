@@ -5,7 +5,7 @@ const renderText = (node) => {
     const link = node.properties && node.properties.find(item => item.label === 'link' && item.type === 'custom') || '';
     const isLink = link.value && link.value.length > 0;
     return {
-        tag: isLink ? 'a' : 'div',
+        tag: isLink ? 'a' : 'pre',
         options: {
             class: {
                 [calcClassName(node)]: true,
